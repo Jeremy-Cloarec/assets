@@ -66,52 +66,50 @@ const navItem1 = document.querySelector("#nav-item1")
 const navItem2 = document.querySelector("#nav-item2")
 const navItem3 = document.querySelector("#nav-item3")
 const navItem4 = document.querySelector("#nav-item4")
-
-
 const subMenu = document.querySelector(".subMenu")
-const arrowDown =document.querySelector(".arrowDown")
 
-
-
-
-
-
-
-
+const arrowDown1 =document.querySelector(".arrowDown1")
+const arrowDown2 =document.querySelector(".arrowDown2")
+const arrowDown3 =document.querySelector(".arrowDown3")
 
 
 
 
 
 navItem1.addEventListener("mouseenter", () =>{
-    arrowDown.classList.add("arrowActive")
+    arrowDown1.classList.add("arrowActive")
 })
 
 navItem1.addEventListener("mouseleave", () =>{
-    arrowDown.classList.remove("arrowActive")
+    arrowDown1.classList.remove("arrowActive")
 })
 
+// _________
+
 navItem2.addEventListener("mouseenter", () =>{
-    arrowDown.classList.add("arrowActive")
+    arrowDown2.classList.add("arrowActive")
 })
 
 navItem2.addEventListener("mouseleave", () =>{
-    arrowDown.classList.remove("arrowActive")
+    arrowDown2.classList.remove("arrowActive")
 })
+
+
+// _________
+
 navItem3.addEventListener("mouseenter", () =>{
-    arrowDown.classList.add("arrowActive")
+    arrowDown3.classList.add("arrowActive")
 })
 
 navItem3.addEventListener("mouseleave", () =>{
-    arrowDown.classList.remove("arrowActive")
-})
-navItem4.addEventListener("mouseenter", () =>{
-    arrowDown.classList.add("arrowActive")
+    arrowDown3.classList.remove("arrowActive")
 })
 
-navItem4.addEventListener("mouseleave", () =>{
-    arrowDown.classList.remove("arrowActive")
-})
+
+
+// Search 
+
+
 
 
 

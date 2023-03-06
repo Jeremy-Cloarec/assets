@@ -43,8 +43,8 @@ a {
     display: flex;
     height: 70px;
     justify-content: space-between;
-    padding: 0 20px;
-    max-width: 380px;
+    padding: 0 30px;
+    max-width: 400px;
 }
 
 /* Logo */
@@ -52,6 +52,7 @@ a {
 .nav-branding{
     font-size: 2rem;
     z-index: 2;
+    flex: 1;
 }
 
 /* __________ */
@@ -72,21 +73,10 @@ a {
 
 /* Arrow menu */
 
-.material-symbols-outlined.arrowDown{
-    font-size: 18px;
-    height: 100%;
-    line-height: 70px;
-}
 
 .arrowActive{
-    transform: rotate(90deg);
-    
+    transform: rotate(90deg);  
 }
-
-
-.nav-link>.material-symbols-outlined.arrow:hover, p:hover{
-    color: dodgerblue;
-} 
 
 .nav-link:hover span{
     color: #1e90ff;
@@ -103,6 +93,12 @@ a {
 
 
 /* Sub menu */
+
+.material-symbols-outlined.arrowDown1, 
+.material-symbols-outlined.arrowDown2, 
+.material-symbols-outlined.arrowDown3{
+    font-size: 18px;
+}
 
 
 .nav-item  a:hover {
@@ -122,14 +118,18 @@ a {
     position: fixed;
     top: 60px;
     background-color: #262626;
-
 }
-
 
 .subMenu.subActive{
     
     transition: all 0.6s ease-in;
     display: block;
+}
+
+/* Sub Items */
+
+.subMenu li{
+    padding-top: 18px;
 }
 
 
@@ -155,20 +155,32 @@ a {
 /* Compte + recherche + panier */
 
 .user{
+    
     display: flex;
+    flex:1;
+    justify-content: flex-end;
+   
 }
 
 .material-symbols-outlined{
     color: white;
 }
 
+
+/* Search */
+
+
+
 .userSearch{
     margin-right: 24px;
     display: flex;
+
+    flex: 1;
     background-color: white;
     border-radius: 30px;
     padding: 0px 3px 0 3px;
     align-items: center;
+    min-width: 110px;
 }
 
 .search {
@@ -178,7 +190,7 @@ a {
 
 .searching{
     border: none;
-    width: 68px;
+    width:100%;
     font-size: 12px;
 }
 
@@ -187,6 +199,10 @@ input.searching:focus{
 }
 
 /* Langues */
+
+.local_mall, .langues{
+    padding-left: 8px;
+}
 
 .langues{
     font-size: 10px;
@@ -246,9 +262,10 @@ main{
     }
 
     .nav-menu.active{
-        left: 0;
+        
         height: 100vh;
         top:70px;
+        width: 100%;
     }
 }
 
