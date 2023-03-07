@@ -8,16 +8,15 @@ const hamburger = document.querySelector(".hamburger")
 const navMenu = document.querySelector(".nav-menu")
 
 
+
 hamburger.addEventListener("click", () =>{
     hamburger.classList.toggle("active")
     navMenu.classList.toggle("active")
 
 
 
-document.querySelectorAll(".nav-link").forEach(n=>n.addEventListener("click", ()=>{
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}))
+
+
 
 
 //Lorsque la classe .active rendant le menu visible est activée, on désactive la fonction onscroll avec le top 0. 
@@ -30,10 +29,14 @@ document.querySelectorAll(".nav-link").forEach(n=>n.addEventListener("click", ()
                 document.querySelector(".navbar").style.top = "0";
             } 
             prevScrollpos = currentScrollPos;
-        }
-//Lorsque la classe active , n'est pas activé, on fait disparaître le menu en le remontant hors du flux. 
+        } 
+
     
-    } else {
+    } 
+
+    //Lorsque ces classes ne sont pas activée, on fait disparaître le menu en le remontant hors du flux. 
+
+    else {
         window.onscroll = function() {
             let currentScrollPos = window.pageYOffset;
             if (prevScrollpos > currentScrollPos ) {
@@ -48,6 +51,7 @@ document.querySelectorAll(".nav-link").forEach(n=>n.addEventListener("click", ()
 
 
 
+
 let windowScroll = window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos ) {
@@ -58,6 +62,8 @@ let windowScroll = window.onscroll = function() {
     prevScrollpos = currentScrollPos;
 
 }
+
+
 
 //Submenu
 
@@ -74,40 +80,156 @@ const arrowDown3 =document.querySelector(".arrowDown3")
 
 
 
+const subItem = document.querySelectorAll(".subItemsLinks")
+const navItem = document.querySelectorAll(".nav-item")
+const accueil = document.querySelector(".accueil")
 
 
-navItem1.addEventListener("mouseenter", () =>{
+
+subItem.forEach(n=>n.addEventListener("click", ()=>{
+   
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+
+}
+))
+accueil.addEventListener("click", ()=>{
+   
+    navMenu.classList.remove("active");
+    hamburger.classList.remove("active");
+
+}
+)
+
+
+
+
+
+// _________Submenu 1
+
+navItem1.addEventListener("mouseenter", (n) =>{
     arrowDown1.classList.add("arrowActive")
+    if (n){
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } 
+            prevScrollpos = currentScrollPos;
+        } 
+    }
+
 })
 
-navItem1.addEventListener("mouseleave", () =>{
+navItem1.addEventListener("mouseleave", (a) =>{
     arrowDown1.classList.remove("arrowActive")
+    if(a){
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } else {
+                document.querySelector(".navbar").style.top = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    }
 })
 
-// _________
+// _________Submenu 2
 
-navItem2.addEventListener("mouseenter", () =>{
+navItem2.addEventListener("mouseenter", (n) =>{
     arrowDown2.classList.add("arrowActive")
+    if (n){
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } 
+            prevScrollpos = currentScrollPos;
+        } 
+    }
 })
 
-navItem2.addEventListener("mouseleave", () =>{
+navItem2.addEventListener("mouseleave", (a) =>{
     arrowDown2.classList.remove("arrowActive")
+    if(a){
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } else {
+                document.querySelector(".navbar").style.top = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    }
 })
 
 
-// _________
+// _________Submenu 3
 
-navItem3.addEventListener("mouseenter", () =>{
+navItem3.addEventListener("mouseenter", (n) =>{
+    if (n){
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } 
+            prevScrollpos = currentScrollPos;
+        } 
+    }
     arrowDown3.classList.add("arrowActive")
 })
 
-navItem3.addEventListener("mouseleave", () =>{
+navItem3.addEventListener("mouseleave", (a) =>{
     arrowDown3.classList.remove("arrowActive")
+    if(a){
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos ) {
+                document.querySelector(".navbar").style.top = "0";
+            } else {
+                document.querySelector(".navbar").style.top = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    }
 })
 
 
 
-// Search 
+
+
+
+
+
+
+
+
+
+
+
+// Langues
+
+let langues = document.querySelector(".langues")
+let chooseLanguage = document.querySelector(".chooseLanguage")
+
+console.log(chooseLanguage);
+
+langues.addEventListener("click", () =>{
+    console.log(true);
+    chooseLanguage.classList.toggle("chooseActive")
+})
+
+
+
+
+
+
 
 
 

@@ -75,6 +75,7 @@ a {
 
 
 .arrowActive{
+    transition: all 0.2s ease-in;
     transform: rotate(90deg);  
 }
 
@@ -105,7 +106,6 @@ a {
     color:dodgerblue;
 }
 
-
 .subMenu{
     
     font-size: 14px;
@@ -132,8 +132,6 @@ a {
     padding-top: 18px;
 }
 
-
-
 /* Hamburger */
 
 .hamburger{
@@ -159,13 +157,13 @@ a {
     display: flex;
     flex:1;
     justify-content: flex-end;
+    z-index: 2;
    
 }
 
 .material-symbols-outlined{
     color: white;
 }
-
 
 /* Search */
 
@@ -204,6 +202,10 @@ input.searching:focus{
     padding-left: 8px;
 }
 
+.local_mall:hover, .langues:hover, .person:hover, .material-symbols-outlined.arrow:hover  {
+    color:#1e90ff;
+}
+
 .langues{
     font-size: 10px;
     color: white;
@@ -212,6 +214,11 @@ input.searching:focus{
     justify-content: center;
     align-items: center;
 }
+
+.langues:hover > .material-symbols-outlined.arrow {
+    color: #1e90ff;
+}
+
 .langues p{
     margin-bottom: -2px;
 }
@@ -222,9 +229,25 @@ input.searching:focus{
     cursor: pointer;
 }
 
+/* Choose language */
+
+.chooseLanguage{
+    padding: 5px;
+    background-color: rgb(211, 211, 211);
+    position: fixed;
+    top: 45px;
+    border: 0.5px solid #262626;
+    color: #262626;
+    display:none;
+}
+
+.chooseActive{
+    display: block;
+}
+
 
 main{
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     height: 2000px;
 }
 
@@ -252,13 +275,22 @@ main{
         justify-content:flex-start;
         background-color: #262626;
         width:100%;
+        max-width: none;
         text-align: center;
         transition: 0.6s;
         left:0;
+        padding: 0 12px;
+    }
+
+    .navbar{
+        padding : 0 12px;
+        z-index: 10;
     }
 
     .nav-item{
-        margin: 16px 0;
+        padding: 16px 0;
+        height:auto;
+        z-index: 1;
     }
 
     .nav-menu.active{
@@ -267,5 +299,40 @@ main{
         top:70px;
         width: 100%;
     }
+
+    .subMenu{
+        text-align: left;
+        position: relative;
+    }
+
+    .nav-item:hover> ul.subMenu{
+        position: relative;
+        top:0;
+    }
+
+    .subMenu li{
+        padding-top: 0;
+        margin-top: 18px;
+    }
+
+    .userSearch{
+    
+        min-width: auto;
+        margin-right: 0px;
+        margin: 0 8px;
+
+    }
+
+    .user{
+        flex: 5;
+    }
+
+    .hamburger{
+        margin-left: 8px;
+    }
+
+    
+
+    
 }
 
